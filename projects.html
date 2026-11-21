@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Deriwan Akhmal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Deriwan<span>.dev</span></a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="section-header">
+                <span class="section-tag">Engineering Work Samples</span>
+                <h1>Featured Automation &amp; IoT Projects</h1>
+                <p>Filter by engineering domain or click on any project to inspect full technical details.</p>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Projects (3)</button>
+                <button class="filter-btn" data-filter="iot">Embedded IoT &amp; Arduino</button>
+                <button class="filter-btn" data-filter="plc">PLC &amp; HMI Automation</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: LPG Gas Sensor -->
+                <article class="project-card" data-category="iot">
+                    <img src="images/project-lpg.jpg" alt="Smart LPG Gas Leakage Detector System prototype" class="project-img">
+                    <div class="project-body">
+                        <span class="project-category">Embedded IoT &amp; Safety</span>
+                        <h3>LPG Gas Detector with Auto Shut-Off &amp; Telegram Alert</h3>
+                        <p>
+                            Real-time residential gas leak detection system that automatically shuts off the gas supply 
+                            and sends instant Telegram alerts to homeowners.
+                        </p>
+                        <div class="tools-list">
+                            <span class="tool-badge">Arduino</span>
+                            <span class="tool-badge">Proteus</span>
+                            <span class="tool-badge">Telegram Bot</span>
+                        </div>
+                        <button class="btn btn-outline view-project-btn" data-project="lpg">
+                            <i class="fas fa-eye"></i> View Project Details
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 2: Water Level Monitoring -->
+                <article class="project-card" data-category="plc">
+                    <img src="images/project-water.jpg" alt="PLC and HMI Water Tank Level Monitoring interface" class="project-img">
+                    <div class="project-body">
+                        <span class="project-category">PLC &amp; HMI Automation</span>
+                        <h3>Industrial Water Tank Level Monitoring System</h3>
+                        <p>
+                            Automated tank level detection system engineered to prevent water overflow and wastage 
+                            across Low, Medium, and High thresholds.
+                        </p>
+                        <div class="tools-list">
+                            <span class="tool-badge">CX-Programmer</span>
+                            <span class="tool-badge">HMI Design</span>
+                            <span class="tool-badge">Level Sensors</span>
+                        </div>
+                        <button class="btn btn-outline view-project-btn" data-project="water">
+                            <i class="fas fa-eye"></i> View Project Details
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 3: Smart Chicken Brooder -->
+                <article class="project-card" data-category="iot">
+                    <img src="images/project-brooder.jpg" alt="Smart Chicken Brooder automated heating system" class="project-img">
+                    <div class="project-body">
+                        <span class="project-category">Embedded IoT &amp; Agri-Tech</span>
+                        <h3>Automated Smart Chicken Brooder Temperature Control</h3>
+                        <p>
+                            Closed-loop thermal regulation system maintaining optimal warmth for newly hatched chicks 
+                            during their critical first two weeks, with cloud logging.
+                        </p>
+                        <div class="tools-list">
+                            <span class="tool-badge">Arduino IDE</span>
+                            <span class="tool-badge">Proteus</span>
+                            <span class="tool-badge">Google Sheets</span>
+                        </div>
+                        <button class="btn btn-outline view-project-btn" data-project="brooder">
+                            <i class="fas fa-eye"></i> View Project Details
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Pop-Up Modal -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModalBtn" aria-label="Close modal">&times;</button>
+            <span class="section-tag" id="modalCategory">Category</span>
+            <h2 id="modalTitle" style="margin-top: 0.5rem;">Project Title</h2>
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1rem 0;">
+            
+            <h3>Problem Statement</h3>
+            <p id="modalProblem"></p>
+
+            <h3>My Role</h3>
+            <p id="modalRole"></p>
+
+            <h3>Tools &amp; Technologies Used</h3>
+            <p id="modalTools"></p>
+
+            <h3>Outcome &amp; Achievement</h3>
+            <p id="modalOutcome"></p>
+
+            <div style="margin-top: 1.5rem;">
+                <a href="https://github.com/deriwan" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View Repository on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear"></span> Deriwan Akhmal Bin Mohd Nasir. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/deriwan" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:vc24002@adab.umpsa.edu.my" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/script.js"></script>
+</body>
+</html>

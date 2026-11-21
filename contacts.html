@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Deriwan Akhmal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Deriwan<span>.dev</span></a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h1>Contact &amp; Internship Inquiries</h1>
+                <p>Available for industrial training opportunities, automation collaborations, and engineering inquiries.</p>
+            </div>
+
+            <div class="contact-grid">
+                <article class="card">
+                    <h2>Contact Information</h2>
+                    <p>Feel free to reach out via email or connect with me through my professional profiles below.</p>
+                    
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <p style="margin: 0;">Bandar Puncak Alam, Selangor</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>University Email</strong>
+                                <p style="margin: 0;"><a href="mailto:vc24002@adab.umpsa.edu.my">vc24002@adab.umpsa.edu.my</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <strong>LinkedIn Profile</strong>
+                                <p style="margin: 0;"><a href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a" target="_blank" rel="noopener">linkedin.com/in/deriwan-akhmal</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <strong>GitHub Portfolio</strong>
+                                <p style="margin: 0;"><a href="https://github.com/deriwan" target="_blank" rel="noopener">github.com/deriwan</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h2>Send a Direct Message</h2>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g., Ahmad Zulkifli">
+                            <span class="error-msg" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="e.g., name@company.com">
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="e.g., Industrial Training Placement">
+                            <span class="error-msg" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" placeholder="Write your message here (minimum 15 characters)..."></textarea>
+                            <span class="error-msg" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+
+                        <div id="formFeedback" class="form-feedback" role="alert"></div>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear"></span> Deriwan Akhmal Bin Mohd Nasir. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/deriwan" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:vc24002@adab.umpsa.edu.my" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/script.js"></script>
+</body>
+</html>

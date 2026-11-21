@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Deriwan Akhmal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Deriwan<span>.dev</span></a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="section-header">
+                <span class="section-tag">Personal Profile</span>
+                <h1>About Me &amp; Academic Journey</h1>
+                <p>Bridging hands-on electronic engineering fundamentals with modern industrial automation.</p>
+            </div>
+
+            <div class="about-grid">
+                <article class="card">
+                    <h2>My Background &amp; Philosophy</h2>
+                    <p>
+                        I am an aspiring Engineering Technologist from Bandar Puncak Alam, Selangor, currently pursuing 
+                        my Bachelor of Technology in Industrial Electronic Automation (Honours) at UMPSA with a CGPA of 3.88.
+                    </p>
+                    <p>
+                        My technical foundation began at Kolej Vokasional Datuk Seri Mohd Zin, where I earned my Diploma 
+                        in Electronic Technology (CGPA 3.67) and Malaysian Skills Certificate (Level 3).
+                    </p>
+                    
+                    <div id="extraBio" class="hidden-text">
+                        <p>
+                            Beyond academics, serving as a Commanding Officer in Pasukan Kadet Maritim Malaysia (PASKAM) 
+                            and working in quality control at Ericsson Resource &amp; Competence Center shaped my discipline, 
+                            precision in calibration, and leadership under pressure.
+                        </p>
+                        <p><strong>Motto:</strong> "Precision in engineering, reliability in execution."</p>
+                    </div>
+
+                    <button id="readMoreBtn" class="btn btn-outline" style="margin-top: 0.5rem;">
+                        Read More About My Journey
+                    </button>
+                </article>
+
+                <article class="card">
+                    <h2>Career Goals &amp; Interests</h2>
+                    <h3>Short-Term &amp; Long-Term Goals</h3>
+                    <ol style="margin-bottom: 1.5rem;">
+                        <li>Complete my industrial training in automated manufacturing systems and continuous improvement.</li>
+                        <li>Master advanced SCADA, Industrial IoT (IIoT), and robotics integration.</li>
+                        <li>Become a certified Professional Technologist (Ts.) contributing to Malaysia's Industry 4.0 ecosystem.</li>
+                    </ol>
+
+                    <h3>Interests &amp; Leadership</h3>
+                    <ul>
+                        <li>Industrial Control Systems &amp; Sensor Calibration</li>
+                        <li>Embedded Hardware Prototyping &amp; Smart Home IoT</li>
+                        <li>Maritime Cadet Leadership &amp; Team Training (PASKAM)</li>
+                    </ul>
+                </article>
+            </div>
+
+            <article class="card">
+                <h2>Education, Certifications &amp; Honors</h2>
+                <p>A summary of my academic qualifications, professional certifications, and competitive achievements.</p>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Qualification / Achievement</th>
+                                <th>Institution / Organizer</th>
+                                <th>Result / Highlight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024 – Present</td>
+                                <td>Bachelor of Technology in Industrial Electronic Automation (Hons)</td>
+                                <td>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</td>
+                                <td>CGPA 3.88 (Dean's List Sem 1–4)</td>
+                            </tr>
+                            <tr>
+                                <td>2023</td>
+                                <td>Professional Certificate in Diesel Engine Performance</td>
+                                <td>Sime Darby Industrial Academy</td>
+                                <td>Certified</td>
+                            </tr>
+                            <tr>
+                                <td>2021 – 2023</td>
+                                <td>Diploma Vocational Malaysia in Electronic Technology</td>
+                                <td>Kolej Vokasional Datuk Seri Mohd Zin</td>
+                                <td>CGPA 3.67 &amp; 4th Place FYP Innovation</td>
+                            </tr>
+                            <tr>
+                                <td>2019 – 2021</td>
+                                <td>Malaysian Vocational Certificate &amp; SKM Level 3</td>
+                                <td>Kolej Vokasional Datuk Seri Mohd Zin</td>
+                                <td>CGPA 3.40 (Certified Level 3)</td>
+                            </tr>
+                            <tr>
+                                <td>2024 – 2026</td>
+                                <td>Commanding Officer &amp; National Innovation Video Competition</td>
+                                <td>Pasukan Kadet Maritim Malaysia (PASKAM)</td>
+                                <td>National-Level Participant</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear"></span> Deriwan Akhmal Bin Mohd Nasir. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/deriwan" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:vc24002@adab.umpsa.edu.my" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/script.js"></script>
+</body>
+</html>
