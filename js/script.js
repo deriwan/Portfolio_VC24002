@@ -129,8 +129,8 @@ function initializeCopyright() {
    4. TIME-BASED GREETING
    ========================================= */
 
-function initializeGreeting() {
 
+function initializeGreeting() {
     const greetingElement = document.getElementById("timeGreeting");
 
     if (!greetingElement) {
@@ -138,26 +138,21 @@ function initializeGreeting() {
     }
 
     const currentHour = new Date().getHours();
-
     let greeting = "";
 
     if (currentHour >= 5 && currentHour < 12) {
-
         greeting = "Good Morning! Welcome to My Portfolio";
-
-    } else if (currentHour >= 12 && currentHour < 18) {
-
+    } else if (currentHour >= 12 && currentHour < 17) {
         greeting = "Good Afternoon! Welcome to My Portfolio";
-
-    } else {
-
+    } else if (currentHour >= 17 && currentHour < 21) {
         greeting = "Good Evening! Welcome to My Portfolio";
-
+    } else {
+        greeting = "Good Night! Welcome to My Portfolio";
     }
 
     greetingElement.textContent = greeting;
-
 }
+
 
 
 /* =========================================
