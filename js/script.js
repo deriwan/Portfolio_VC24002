@@ -698,8 +698,10 @@ function initializeProjectModal() {
 
 /* =========================================
    11. CONTACT FORM VALIDATION
+   - Validates user input
+   - Prepares email using mailto
+   - Tested successfully with Outlook
    ========================================= */
-
 function initializeContactForm() {
 
     const form = document.getElementById("contactForm");
