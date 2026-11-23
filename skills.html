@@ -1,172 +1,574 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills &amp; Experience | Deriwan Akhmal</title>
+
+    <meta name="description"
+          content="Explore the technical, software and professional skills of Deriwan Akhmal, an Industrial Electronic Automation student.">
+
+    <title>Skills | Deriwan Akhmal</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+    <!-- NAVIGATION -->
     <header>
         <div class="container navbar">
-            <a href="index.html" class="logo">Deriwan<span>.dev</span></a>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+
+            <a href="index.html" class="logo">
+                Deriwan<span>.dev</span>
+            </a>
+
+            <button
+                type="button"
+                class="hamburger"
+                id="hamburgerBtn"
+                aria-label="Toggle Navigation"
+                aria-controls="navLinks"
+                aria-expanded="false">
+                <span class="ui-icon" aria-hidden="true">☰</span>
             </button>
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="skills.html" class="active" aria-current="page">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+
         </div>
     </header>
 
     <main>
+
+        <!-- PAGE INTRODUCTION -->
         <section class="container">
+
             <div class="section-header">
-                <span class="section-tag">Competencies</span>
-                <h1>Technical &amp; Professional Skills</h1>
-                <p>Core engineering competencies, quality assurance standards, and leadership capabilities.</p>
+
+                <span class="section-tag">What I Can Do</span>
+
+                <h1>My Skills &amp; Expertise</h1>
+
+                <p>
+                    A combination of technical knowledge,
+                    practical experience and professional skills
+                    developed through education and industrial work.
+                </p>
+
             </div>
 
-            <div class="tabs-nav">
-                <button class="tab-btn active" data-target="techSkills">Technical Skills</button>
-                <button class="tab-btn" data-target="softSkills">Interpersonal &amp; Languages</button>
+            <!-- SKILL CATEGORY TABS -->
+            <div class="skills-tabs" role="tablist"
+                 aria-label="Skill categories">
+
+                <button
+                    type="button"
+                    class="skill-tab active"
+                    id="tab-technical"
+                    data-target="technical"
+                    role="tab"
+                    aria-controls="technical"
+                    aria-selected="true">
+                    Technical Skills
+                </button>
+
+                <button
+                    type="button"
+                    class="skill-tab"
+                    id="tab-software"
+                    data-target="software"
+                    role="tab"
+                    aria-controls="software"
+                    aria-selected="false">
+                    Software &amp; Tools
+                </button>
+
+                <button
+                    type="button"
+                    class="skill-tab"
+                    id="tab-soft"
+                    data-target="soft"
+                    role="tab"
+                    aria-controls="soft"
+                    aria-selected="false">
+                    Soft Skills
+                </button>
+
+                <button
+                    type="button"
+                    class="skill-tab"
+                    id="tab-languages"
+                    data-target="languages"
+                    role="tab"
+                    aria-controls="languages"
+                    aria-selected="false">
+                    Languages
+                </button>
+
             </div>
 
-            <div id="techSkills" class="tab-panel active">
+            <!-- TECHNICAL SKILLS -->
+            <section
+                class="skill-panel active"
+                id="technical"
+                role="tabpanel"
+                aria-labelledby="tab-technical">
+
                 <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>PLC Programming (CX-Programmer) &amp; HMI</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Arduino IDE &amp; Proteus Circuit Simulation</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Quality Control, Torque Calibration &amp; ESD Compliance</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Industrial Wiring, CCTV &amp; Structured Cabling</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Electronic Equipment Testing &amp; Troubleshooting</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>HTML5, CSS3, Vanilla JS &amp; MS Excel Data Handling</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
-                    </div>
-                </div>
-            </div>
 
-            <div id="softSkills" class="tab-panel">
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">⚙</span>
+
+                        <h3>PLC Programming</h3>
+
+                        <p>
+                            Basic PLC programming, ladder logic,
+                            automation control and troubleshooting
+                            for industrial applications.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>OMRON PLC</span>
+                            <span>Ladder Logic</span>
+                            <span>Control Systems</span>
+                        </div>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">▣</span>
+
+                        <h3>Embedded Systems</h3>
+
+                        <p>
+                            Developing microcontroller-based
+                            applications using sensors,
+                            actuators and electronic components.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Arduino</span>
+                            <span>ESP32</span>
+                            <span>Sensors</span>
+                        </div>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">◈</span>
+
+                        <h3>Electronics &amp; Wiring</h3>
+
+                        <p>
+                            Electronic circuit assembly,
+                            structured cabling, CCTV installation
+                            and basic circuit troubleshooting.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Circuit Wiring</span>
+                            <span>CCTV</span>
+                            <span>Troubleshooting</span>
+                        </div>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">◎</span>
+
+                        <h3>Quality Control</h3>
+
+                        <p>
+                            Experience in sample inspection,
+                            torque wrench calibration checks
+                            and ESD compliance procedures.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Quality Inspection</span>
+                            <span>ESD</span>
+                            <span>Calibration</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- SOFTWARE & TOOLS -->
+            <section
+                class="skill-panel"
+                id="software"
+                role="tabpanel"
+                aria-labelledby="tab-software"
+                hidden>
+
                 <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Command &amp; Team Leadership (PASKAM Officer)</span>
-                            <span>92%</span>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">⌘</span>
+
+                        <h3>Automation Software</h3>
+
+                        <p>
+                            Software used for PLC programming,
+                            industrial automation projects
+                            and HMI development.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>CX-Programmer</span>
+                            <span>HMI</span>
+                            <span>PLC Tools</span>
                         </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Cross-Functional Communication &amp; Liaison</span>
-                            <span>90%</span>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">⌁</span>
+
+                        <h3>Electronics Development</h3>
+
+                        <p>
+                            Tools for microcontroller programming,
+                            circuit design and embedded system testing.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Arduino IDE</span>
+                            <span>EasyEDA</span>
+                            <span>Raspberry Pi</span>
                         </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Audit Readiness &amp; Documentation Compliance</span>
-                            <span>88%</span>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">▤</span>
+
+                        <h3>Office &amp; Documentation</h3>
+
+                        <p>
+                            Preparing reports, organizing data,
+                            maintaining records and supporting
+                            administrative tasks.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Microsoft Word</span>
+                            <span>Microsoft Excel</span>
+                            <span>Google Sheets</span>
                         </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Languages: Bahasa Melayu (Native) &amp; English (Professional)</span>
-                            <span>90%</span>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">⌨</span>
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Basic front-end development for
+                            responsive websites using HTML,
+                            CSS and JavaScript.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>VS Code</span>
                         </div>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                    </div>
+
+                    </article>
+
                 </div>
-            </div>
 
-            <div class="section-header" style="margin-top: 4rem; margin-bottom: 2rem;">
-                <span class="section-tag">Industry Exposure</span>
-                <h2>Work Experience</h2>
-            </div>
+            </section>
 
-            <div class="about-grid">
-                <article class="card">
-                    <h3>Quality Control Role (Contract)</h3>
-                    <p><strong>Ericsson Resource &amp; Competence Center</strong> | Apr 2024 – Sep 2024</p>
-                    <ul>
-                        <li>Inspected sample units and verified compliance with strict quality documentation.</li>
-                        <li>Calibrated torque wrenches and served as Person-in-Charge (PIC) for all new units.</li>
-                        <li>Audited ESD chairs, workbenches, and mats prior to expiry dates to ensure safety compliance.</li>
-                    </ul>
-                </article>
+            <!-- SOFT SKILLS -->
+            <section
+                class="skill-panel"
+                id="soft"
+                role="tabpanel"
+                aria-labelledby="tab-soft"
+                hidden>
 
-                <article class="card">
-                    <h3>Technician (Internship)</h3>
-                    <p><strong>Hafiz Safety &amp; Security Services</strong> | May 2023 – Oct 2023</p>
-                    <ul>
-                        <li>Installed CCTV surveillance systems and executed structured indoor/outdoor cabling.</li>
-                        <li>Configured Wi-Fi extenders and performed electrical wiring in residential and commercial sites.</li>
-                    </ul>
-                </article>
-            </div>
+                <div class="skills-grid">
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">♜</span>
+
+                        <h3>Leadership</h3>
+
+                        <p>
+                            Experience leading and coordinating
+                            teams through PASKAM activities
+                            and previous employment.
+                        </p>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">◇</span>
+
+                        <h3>Teamwork</h3>
+
+                        <p>
+                            Able to cooperate with team members,
+                            share responsibilities and work
+                            towards common objectives.
+                        </p>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">✦</span>
+
+                        <h3>Problem-Solving</h3>
+
+                        <p>
+                            Applying logical thinking to
+                            identify technical issues and
+                            develop practical solutions.
+                        </p>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">✉</span>
+
+                        <h3>Communication</h3>
+
+                        <p>
+                            Communicating instructions,
+                            reporting progress and interacting
+                            with colleagues and customers.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- LANGUAGES -->
+            <section
+                class="skill-panel"
+                id="languages"
+                role="tabpanel"
+                aria-labelledby="tab-languages"
+                hidden>
+
+                <div class="skills-grid">
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">文</span>
+
+                        <h3>Bahasa Melayu</h3>
+
+                        <p>
+                            Primary language used for
+                            daily communication, teamwork
+                            and professional interactions.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Primary Language</span>
+                        </div>
+
+                    </article>
+
+                    <article class="skill-card">
+
+                        <span class="skill-icon" aria-hidden="true">EN</span>
+
+                        <h3>English</h3>
+
+                        <p>
+                            Used for academic materials,
+                            technical documentation and
+                            workplace communication.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Working Knowledge</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
         </section>
+
+        <!-- PRACTICAL EXPERIENCE -->
+        <section class="container about-section">
+
+            <div class="section-header">
+
+                <span class="section-tag">Skills in Practice</span>
+
+                <h2>Where I Applied My Skills</h2>
+
+                <p>
+                    Practical examples from my projects,
+                    industrial training and work experience.
+                </p>
+
+            </div>
+
+            <div class="experience-grid">
+
+                <article class="card">
+
+                    <span class="section-tag">Industrial Experience</span>
+
+                    <h3>Ericsson — Quality Control</h3>
+
+                    <p>
+                        Applied inspection procedures,
+                        ESD compliance checks and
+                        torque tool calibration practices
+                        in a professional environment.
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <span class="section-tag">Technical Training</span>
+
+                    <h3>Hafiz Safety &amp; Security</h3>
+
+                    <p>
+                        Developed practical skills in
+                        CCTV installation, structured cabling,
+                        network setup and troubleshooting.
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <span class="section-tag">Academic Projects</span>
+
+                    <h3>PLC &amp; Embedded Systems</h3>
+
+                    <p>
+                        Applied programming, electronic wiring
+                        and sensor integration in automation
+                        and monitoring projects.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="container about-section">
+
+            <div class="featured-strip">
+
+                <div>
+
+                    <span class="section-tag">See My Work</span>
+
+                    <h2>Skills become valuable through practice.</h2>
+
+                    <p>
+                        Explore the projects where I applied
+                        these skills to real technical challenges.
+                    </p>
+
+                </div>
+
+                <a href="projects.html" class="btn btn-primary">
+                    View My Projects
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer>
+
         <div class="container footer-content">
-            <p>&copy; <span id="currentYear"></span> Deriwan Akhmal Bin Mohd Nasir. All rights reserved.</p>
+
+            <p>
+                &copy; <span id="currentYear"></span>
+                Deriwan Akhmal Bin Mohd Nasir.
+                All rights reserved.
+            </p>
+
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+
+                <a href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                    <span class="ui-icon" aria-hidden="true">in</span>
                 </a>
-                <a href="https://github.com/deriwan" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+
+                <a href="https://github.com/deriwan"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="GitHub">
+                    <span class="ui-icon" aria-hidden="true">GH</span>
                 </a>
-                <a href="mailto:vc24002@adab.umpsa.edu.my" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
+
+                <a href="mailto:jangvans123@gmail.com"
+                   aria-label="Email">
+                    <span class="ui-icon" aria-hidden="true">✉</span>
                 </a>
+
             </div>
+
         </div>
+
     </footer>
 
-    <button id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <!-- SCROLL TO TOP -->
+    <button
+        type="button"
+        id="scrollTopBtn"
+        aria-label="Scroll to top">
+        <span class="ui-icon" aria-hidden="true">↑</span>
+    </button>
+
     <script src="js/script.js"></script>
+
 </body>
 </html>

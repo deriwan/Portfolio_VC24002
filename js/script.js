@@ -1,276 +1,1001 @@
-/* ==========================================================================
-   BVI3124 Assignment 1: Personal Portfolio
-   Author: Deriwan Akhmal Bin Mohd Nasir (VC24002)
-   Description: Interactive Vanilla JavaScript Features
-   ========================================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Automatic Copyright Year
-    const yearSpan = document.getElementById("currentYear");
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+/* =========================================
+   DERIWAN AKHMAL - BROWN MOCHA PORTFOLIO
+   Main JavaScript
+   ========================================= */
 
-    // 2. Responsive Hamburger Menu Toggle (Mobile)
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
+"use strict";
+
+/* =========================================
+   1. INITIALIZE WEBSITE
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    initializeNavigation();
+    initializeCopyright();
+    initializeGreeting();
+    initializeTypingEffect();
+    initializeReadMore();
+    initializeSkillTabs();
+    initializeProjectFilter();
+    initializeProjectModal();
+    initializeContactForm();
+    initializeScrollToTop();
+
+});
+
+
+/* =========================================
+   2. RESPONSIVE NAVIGATION
+   ========================================= */
+
+function initializeNavigation() {
+
+    const hamburger = document.getElementById("hamburgerBtn");
     const navLinks = document.getElementById("navLinks");
 
-    if (hamburgerBtn && navLinks) {
-        hamburgerBtn.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            const isExpanded = navLinks.classList.contains("active");
-            hamburgerBtn.setAttribute("aria-expanded", isExpanded);
-        });
+    if (!hamburger || !navLinks) {
+        return;
     }
 
-    // 3. Time-Based Greeting & Typing Effect (index.html)
-    const greetingEl = document.getElementById("timeGreeting");
-    if (greetingEl) {
-        const hour = new Date().getHours();
-        let greetingText = "Good Evening";
-        if (hour < 12) {
-            greetingText = "Good Morning";
-        } else if (hour < 18) {
-            greetingText = "Good Afternoon";
+    function closeNavigation() {
+
+        navLinks.classList.remove("show");
+
+        hamburger.setAttribute("aria-expanded", "false");
+
+        const icon = hamburger.querySelector(".ui-icon");
+
+        if (icon) {
+            icon.textContent = "☰";
         }
-        greetingEl.textContent = `${greetingText}, Welcome to My Portfolio`;
+
     }
 
-    const typingEl = document.getElementById("typingText");
-    if (typingEl) {
-        const roles = [
-            "Industrial Electronic Automation Technologist",
-            "PLC & HMI Control Systems Developer",
-            "Embedded IoT & Arduino Enthusiast",
-            "Quality Control & Calibration Specialist"
-        ];
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+    hamburger.addEventListener("click", function () {
 
-        function typeEffect() {
-            const currentRole = roles[roleIndex];
-            if (isDeleting) {
-                typingEl.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingEl.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
+        const isOpen = navLinks.classList.toggle("show");
 
-            let speed = isDeleting ? 45 : 85;
+        hamburger.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
 
-            if (!isDeleting && charIndex === currentRole.length) {
-                speed = 1800; // Pause at full sentence
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                speed = 400;
-            }
+        const icon = hamburger.querySelector(".ui-icon");
 
-            setTimeout(typeEffect, speed);
+        if (icon) {
+            icon.textContent = isOpen ? "✕" : "☰";
         }
-        typeEffect();
+
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", closeNavigation);
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            closeNavigation();
+        }
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+        const clickedInsideMenu = navLinks.contains(event.target);
+        const clickedHamburger = hamburger.contains(event.target);
+
+        if (!clickedInsideMenu && !clickedHamburger) {
+            closeNavigation();
+        }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 768) {
+            closeNavigation();
+        }
+
+    });
+
+}
+
+
+/* =========================================
+   3. AUTOMATIC COPYRIGHT YEAR
+   ========================================= */
+
+function initializeCopyright() {
+
+    const yearElements = document.querySelectorAll("#currentYear");
+
+    const currentYear = new Date().getFullYear();
+
+    yearElements.forEach(function (element) {
+
+        element.textContent = currentYear;
+
+    });
+
+}
+
+
+/* =========================================
+   4. TIME-BASED GREETING
+   ========================================= */
+
+function initializeGreeting() {
+
+    const greetingElement = document.getElementById("timeGreeting");
+
+    if (!greetingElement) {
+        return;
     }
 
-    // 4. "Read More" Show/Hide Toggle (about.html)
-    const readMoreBtn = document.getElementById("readMoreBtn");
+    const currentHour = new Date().getHours();
+
+    let greeting = "";
+
+    if (currentHour >= 5 && currentHour < 12) {
+
+        greeting = "Good Morning! Welcome to My Portfolio";
+
+    } else if (currentHour >= 12 && currentHour < 18) {
+
+        greeting = "Good Afternoon! Welcome to My Portfolio";
+
+    } else {
+
+        greeting = "Good Evening! Welcome to My Portfolio";
+
+    }
+
+    greetingElement.textContent = greeting;
+
+}
+
+
+/* =========================================
+   5. HOME PAGE TYPING EFFECT
+   ========================================= */
+
+function initializeTypingEffect() {
+
+    const typingElement = document.getElementById("typingText");
+
+    if (!typingElement) {
+        return;
+    }
+
+    const titles = [
+        "Industrial Electronic Automation Student",
+        "Electronics & Embedded Systems Enthusiast",
+        "PLC and Automation Technology Learner",
+        "Passionate About Practical Innovation"
+    ];
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) {
+
+        typingElement.textContent = titles[0];
+        return;
+
+    }
+
+    let titleIndex = 0;
+    let characterIndex = 0;
+    let isDeleting = false;
+
+    function typeText() {
+
+        const currentTitle = titles[titleIndex];
+
+        if (isDeleting) {
+
+            characterIndex--;
+
+        } else {
+
+            characterIndex++;
+
+        }
+
+        typingElement.textContent = currentTitle.substring(
+            0,
+            characterIndex
+        );
+
+        let typingSpeed = isDeleting ? 45 : 85;
+
+        if (!isDeleting && characterIndex === currentTitle.length) {
+
+            isDeleting = true;
+            typingSpeed = 1800;
+
+        } else if (isDeleting && characterIndex === 0) {
+
+            isDeleting = false;
+
+            titleIndex = (titleIndex + 1) % titles.length;
+
+            typingSpeed = 450;
+
+        }
+
+        window.setTimeout(typeText, typingSpeed);
+
+    }
+
+    typeText();
+
+}
+
+
+/* =========================================
+   6. ABOUT PAGE READ MORE
+   ========================================= */
+
+function initializeReadMore() {
+
+    const readMoreButton = document.getElementById("readMoreBtn");
     const extraBio = document.getElementById("extraBio");
 
-    if (readMoreBtn && extraBio) {
-        readMoreBtn.addEventListener("click", () => {
-            const isHidden = extraBio.style.display === "none" || extraBio.style.display === "";
-            if (isHidden) {
-                extraBio.style.display = "block";
-                readMoreBtn.textContent = "Show Less";
+    if (!readMoreButton || !extraBio) {
+        return;
+    }
+
+    readMoreButton.addEventListener("click", function () {
+
+        const isExpanded =
+            readMoreButton.getAttribute("aria-expanded") === "true";
+
+        const newState = !isExpanded;
+
+        extraBio.hidden = !newState;
+
+        readMoreButton.setAttribute(
+            "aria-expanded",
+            String(newState)
+        );
+
+        readMoreButton.textContent = newState
+            ? "Read Less"
+            : "Read More About Me";
+
+    });
+
+}
+
+
+/* =========================================
+   7. INTERACTIVE SKILLS TABS
+   ========================================= */
+
+function initializeSkillTabs() {
+
+    const tabs = Array.from(
+        document.querySelectorAll(".skill-tab")
+    );
+
+    const panels = Array.from(
+        document.querySelectorAll(".skill-panel")
+    );
+
+    if (tabs.length === 0 || panels.length === 0) {
+        return;
+    }
+
+    function activateTab(selectedTab, moveFocus = false) {
+
+        const targetId = selectedTab.dataset.target;
+
+        tabs.forEach(function (tab) {
+
+            const isActive = tab === selectedTab;
+
+            tab.classList.toggle("active", isActive);
+
+            tab.setAttribute(
+                "aria-selected",
+                String(isActive)
+            );
+
+            tab.tabIndex = isActive ? 0 : -1;
+
+        });
+
+        panels.forEach(function (panel) {
+
+            const isActive = panel.id === targetId;
+
+            panel.classList.toggle("active", isActive);
+
+            panel.hidden = !isActive;
+
+        });
+
+        if (moveFocus) {
+            selectedTab.focus();
+        }
+
+    }
+
+    tabs.forEach(function (tab, index) {
+
+        tab.addEventListener("click", function () {
+
+            activateTab(tab);
+
+        });
+
+        tab.addEventListener("keydown", function (event) {
+
+            let nextIndex = index;
+
+            if (event.key === "ArrowRight") {
+
+                nextIndex = (index + 1) % tabs.length;
+
+            } else if (event.key === "ArrowLeft") {
+
+                nextIndex = (index - 1 + tabs.length) % tabs.length;
+
+            } else if (event.key === "Home") {
+
+                nextIndex = 0;
+
+            } else if (event.key === "End") {
+
+                nextIndex = tabs.length - 1;
+
             } else {
-                extraBio.style.display = "none";
-                readMoreBtn.textContent = "Read More About My Journey";
+
+                return;
+
             }
+
+            event.preventDefault();
+
+            activateTab(tabs[nextIndex], true);
+
         });
-    }
 
-    // 5. Skills Category Tabs (skills.html)
-    const tabBtns = document.querySelectorAll(".tab-btn");
-    const tabPanels = document.querySelectorAll(".tab-panel");
+    });
 
-    if (tabBtns.length > 0) {
-        tabBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                // Remove active state from all buttons and panels
-                tabBtns.forEach((b) => b.classList.remove("active"));
-                tabPanels.forEach((p) => p.classList.remove("active"));
+    const initialTab = tabs.find(function (tab) {
 
-                // Activate clicked tab
-                btn.classList.add("active");
-                const targetPanel = document.getElementById(btn.dataset.target);
-                if (targetPanel) {
-                    targetPanel.classList.add("active");
-                }
-            });
-        });
-    }
+        return tab.classList.contains("active");
 
-    // 6. Project Category Filter & Details Modal (projects.html)
-    const filterBtns = document.querySelectorAll(".filter-btn");
+    }) || tabs[0];
+
+    activateTab(initialTab);
+
+}
+
+
+/* =========================================
+   8. PROJECT CATEGORY FILTER
+   ========================================= */
+
+function initializeProjectFilter() {
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
     const projectCards = document.querySelectorAll(".project-card");
 
-    if (filterBtns.length > 0) {
-        filterBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                filterBtns.forEach((b) => b.classList.remove("active"));
-                btn.classList.add("active");
+    const noProjectsMessage =
+        document.getElementById("noProjectsMessage");
 
-                const category = btn.dataset.filter;
-                projectCards.forEach((card) => {
-                    if (category === "all" || card.dataset.category === category) {
-                        card.style.display = "flex";
-                    } else {
-                        card.style.display = "none";
-                    }
-                });
-            });
-        });
+    if (filterButtons.length === 0 || projectCards.length === 0) {
+        return;
     }
 
-    // Project Modal Data & Logic
-    const projectDetailsData = {
-        lpg: {
-            title: "Smart LPG Gas Leakage Detector with Auto Shut-Off & Telegram Alert",
-            category: "Embedded IoT & Safety Automation",
-            problem: "Homeowners often leave their houses unattended and are unable to detect dangerous LPG gas leaks in real time, increasing the risk of fire or explosion.",
-            role: "Lead Developer – Designed the circuit simulation in Proteus, programmed the Arduino microcontroller, and integrated Telegram Bot API notifications.",
-            tools: "Arduino IDE, Proteus Simulation, MQ-2 Gas Sensor, Servo/Solenoid Valve, Telegram Bot API",
-            outcome: "Successfully detected gas concentration thresholds, triggered an automatic valve shut-off mechanism, and delivered instant warning alerts via Telegram. Won 4th Place in the Final Year Innovation Project Competition."
-        },
-        water: {
-            title: "Industrial Water Tank Level Monitoring & Control System",
-            category: "PLC & HMI Automation",
-            problem: "Manual monitoring of water storage tanks frequently leads to delayed pump control, causing water overflow, resource wastage, and operational inefficiency.",
-            role: "Automation System Developer – Developed the ladder logic program and designed the operator interface screen.",
-            tools: "Omron CX-Programmer, NB-Designer HMI, Level Sensors, Relay Control",
-            outcome: "Accurately monitored and displayed Low, Medium, and High water levels in real time on the HMI panel while automating pump start/stop sequences."
-        },
-        brooder: {
-            title: "Automated Smart Chicken Brooder Temperature Control System",
-            category: "Embedded IoT & Agriculture Tech",
-            problem: "Newly hatched chicks require strict, consistent ambient temperatures during their first two weeks of life to ensure healthy survival and growth.",
-            role: "System Designer & Programmer – Built the closed-loop thermal control logic and cloud data logging integration.",
-            tools: "Arduino IDE, Proteus, DHT22 Temperature Sensor, Heating Lamp Actuator, Google Sheets API",
-            outcome: "Maintained optimal brooder temperature automatically using heating lamps and logged real-time temperature data directly into Google Sheets for remote tracking."
-        }
-    };
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const selectedCategory = button.dataset.filter;
+
+            filterButtons.forEach(function (filterButton) {
+
+                const isActive = filterButton === button;
+
+                filterButton.classList.toggle("active", isActive);
+
+                filterButton.setAttribute(
+                    "aria-pressed",
+                    String(isActive)
+                );
+
+            });
+
+            let visibleCount = 0;
+
+            projectCards.forEach(function (card) {
+
+                const projectCategory = card.dataset.category;
+
+                const shouldShow =
+                    selectedCategory === "all" ||
+                    projectCategory === selectedCategory;
+
+                card.hidden = !shouldShow;
+
+                if (shouldShow) {
+                    visibleCount++;
+                }
+
+            });
+
+            if (noProjectsMessage) {
+
+                noProjectsMessage.hidden = visibleCount !== 0;
+
+            }
+
+        });
+
+    });
+
+}
+
+
+/* =========================================
+   9. PROJECT INFORMATION
+   ========================================= */
+
+const projectDetails = {
+
+    lpg: {
+
+        category: "Electronics & Safety",
+
+        title: "LPG Gas Detector with Exhaust Fan",
+
+        problem:
+            "LPG gas leakage can create safety risks when it is not detected early. This project explored an electronic gas detection system with an exhaust fan response.",
+
+        role:
+            "Developed the project as part of my Diploma in Electronic Technology final year work, including system development, component integration and project testing.",
+
+        tools:
+            "Gas sensor, electronic circuit components, exhaust fan and electronic control system.",
+
+        outcome:
+            "The project was presented in a final year innovation competition and achieved fourth place."
+
+    },
+
+    water: {
+
+        category: "PLC & Industrial Automation",
+
+        title: "Water Tank Level Monitoring System",
+
+        problem:
+            "Water level control requires monitoring and suitable control logic to respond to different tank level conditions.",
+
+        role:
+            "Worked on PLC ladder logic and water level control operations as part of an academic automation exercise.",
+
+        tools:
+            "OMRON PLC, CX-Programmer, ladder logic and water level control components.",
+
+        outcome:
+            "Developed practical understanding of PLC programming, control sequences and water level monitoring logic."
+
+    },
+
+    brooder: {
+
+        category: "Embedded Systems & Smart Agriculture",
+
+        title: "Smart Chicken Brooder",
+
+        problem:
+            "Young chicks require suitable brooding temperatures. Manual temperature monitoring and heating adjustments can be inconvenient and inconsistent.",
+
+        role:
+            "Worked on integrating an ESP32 microcontroller, temperature sensing, relay-controlled heating and monitoring components for the brooder system.",
+
+        tools:
+            "ESP32, DHT temperature sensor, relay modules, heating lamps, LCD display and Google Sheets integration.",
+
+        outcome:
+            "Developed a temperature monitoring and heating control prototype for a smart poultry brooder, with data monitoring features."
+
+    }
+
+};
+
+
+/* =========================================
+   10. PROJECT DETAILS MODAL
+   ========================================= */
+
+function initializeProjectModal() {
 
     const modal = document.getElementById("projectModal");
-    const closeModalBtn = document.getElementById("closeModalBtn");
-    const viewProjectBtns = document.querySelectorAll(".view-project-btn");
 
-    if (modal && viewProjectBtns.length > 0) {
-        viewProjectBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const projectKey = btn.dataset.project;
-                const data = projectDetailsData[projectKey];
-                if (data) {
-                    document.getElementById("modalTitle").textContent = data.title;
-                    document.getElementById("modalCategory").textContent = data.category;
-                    document.getElementById("modalProblem").textContent = data.problem;
-                    document.getElementById("modalRole").textContent = data.role;
-                    document.getElementById("modalTools").textContent = data.tools;
-                    document.getElementById("modalOutcome").textContent = data.outcome;
-                    modal.classList.add("open");
-                }
+    const viewButtons = document.querySelectorAll(".view-project-btn");
+
+    const closeButton = document.getElementById("closeModalBtn");
+
+    const closeAction = document.getElementById("modalCloseAction");
+
+    if (!modal || viewButtons.length === 0) {
+        return;
+    }
+
+    const modalFields = {
+
+        category: document.getElementById("modalCategory"),
+
+        title: document.getElementById("modalTitle"),
+
+        problem: document.getElementById("modalProblem"),
+
+        role: document.getElementById("modalRole"),
+
+        tools: document.getElementById("modalTools"),
+
+        outcome: document.getElementById("modalOutcome")
+
+    };
+
+    let previousFocus = null;
+
+    function openModal(projectId) {
+
+        const project = projectDetails[projectId];
+
+        if (!project) {
+            return;
+        }
+
+        modalFields.category.textContent = project.category;
+
+        modalFields.title.textContent = project.title;
+
+        modalFields.problem.textContent = project.problem;
+
+        modalFields.role.textContent = project.role;
+
+        modalFields.tools.textContent = project.tools;
+
+        modalFields.outcome.textContent = project.outcome;
+
+        previousFocus = document.activeElement;
+
+        modal.hidden = false;
+
+        document.body.classList.add("modal-open");
+
+        if (closeButton) {
+            closeButton.focus();
+        } else {
+            modal.focus();
+        }
+
+    }
+
+    function closeModal() {
+
+        if (modal.hidden) {
+            return;
+        }
+
+        modal.hidden = true;
+
+        document.body.classList.remove("modal-open");
+
+        if (previousFocus && previousFocus.isConnected) {
+            previousFocus.focus();
+        }
+
+    }
+
+    viewButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const projectId = button.dataset.project;
+
+            openModal(projectId);
+
+        });
+
+    });
+
+    if (closeButton) {
+
+        closeButton.addEventListener("click", closeModal);
+
+    }
+
+    if (closeAction) {
+
+        closeAction.addEventListener("click", closeModal);
+
+    }
+
+    modal.addEventListener("click", function (event) {
+
+        if (event.target === modal) {
+            closeModal();
+        }
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+        if (modal.hidden) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+
+            event.preventDefault();
+
+            closeModal();
+
+            return;
+
+        }
+
+        if (event.key === "Tab") {
+
+            const focusableElements = Array.from(
+                modal.querySelectorAll(
+                    'button:not([disabled]), a[href], input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                )
+            ).filter(function (element) {
+
+                return element.getClientRects().length > 0;
+
             });
-        });
 
-        closeModalBtn.addEventListener("click", () => {
-            modal.classList.remove("open");
-        });
-
-        window.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("open");
+            if (focusableElements.length === 0) {
+                event.preventDefault();
+                return;
             }
-        });
+
+            const firstElement = focusableElements[0];
+
+            const lastElement =
+                focusableElements[focusableElements.length - 1];
+
+            if (event.shiftKey &&
+                document.activeElement === firstElement) {
+
+                event.preventDefault();
+
+                lastElement.focus();
+
+            } else if (!event.shiftKey &&
+                       document.activeElement === lastElement) {
+
+                event.preventDefault();
+
+                firstElement.focus();
+
+            }
+
+        }
+
+    });
+
+}
+
+
+/* =========================================
+   11. CONTACT FORM VALIDATION
+   ========================================= */
+
+function initializeContactForm() {
+
+    const form = document.getElementById("contactForm");
+
+    if (!form) {
+        return;
     }
 
-    // 7. Compulsory Contact Form Validation (contact.html)
-    const contactForm = document.getElementById("contactForm");
-    if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+    const nameInput = document.getElementById("contactName");
 
-            // Input elements
-            const nameInput = document.getElementById("fullName");
-            const emailInput = document.getElementById("email");
-            const subjectInput = document.getElementById("subject");
-            const messageInput = document.getElementById("message");
+    const emailInput = document.getElementById("contactEmail");
 
-            // Error display elements
-            const nameError = document.getElementById("nameError");
-            const emailError = document.getElementById("emailError");
-            const subjectError = document.getElementById("subjectError");
-            const messageError = document.getElementById("messageError");
-            const formFeedback = document.getElementById("formFeedback");
+    const subjectInput = document.getElementById("contactSubject");
 
-            // Reset previous messages
-            nameError.textContent = "";
-            emailError.textContent = "";
-            subjectError.textContent = "";
-            messageError.textContent = "";
-            formFeedback.style.display = "none";
-            formFeedback.className = "form-feedback";
+    const messageInput = document.getElementById("contactMessage");
 
-            let isValid = true;
+    const formStatus = document.getElementById("formStatus");
 
-            // Validate Name
-            if (nameInput.value.trim().length < 3) {
-                nameError.textContent = "Please enter your full name (minimum 3 characters).";
-                isValid = false;
-            }
+    const fields = [
+        {
+            input: nameInput,
+            errorId: "nameError",
+            label: "Full name"
+        },
+        {
+            input: emailInput,
+            errorId: "emailError",
+            label: "Email address"
+        },
+        {
+            input: subjectInput,
+            errorId: "subjectError",
+            label: "Subject"
+        },
+        {
+            input: messageInput,
+            errorId: "messageError",
+            label: "Message"
+        }
+    ];
 
-            // Validate Email with Regex
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(emailInput.value.trim())) {
-                emailError.textContent = "Please enter a valid email address (e.g., name@domain.com).";
-                isValid = false;
-            }
+    function showError(input, errorId, message) {
 
-            // Validate Subject
-            if (subjectInput.value.trim() === "") {
-                subjectError.textContent = "Please enter a subject for your inquiry.";
-                isValid = false;
-            }
+        const errorElement = document.getElementById(errorId);
 
-            // Validate Message
-            if (messageInput.value.trim().length < 15) {
-                messageError.textContent = "Please write a message with at least 15 characters.";
-                isValid = false;
-            }
+        input.classList.add("invalid");
 
-            // If all inputs pass validation
-            if (isValid) {
-                formFeedback.textContent = `Thank you, ${nameInput.value.trim()}! Your message has been validated and sent successfully.`;
-                formFeedback.classList.add("success");
-                formFeedback.style.display = "block";
-                contactForm.reset();
-            }
-        });
+        input.setAttribute("aria-invalid", "true");
+
+        if (errorElement) {
+            errorElement.textContent = message;
+        }
+
     }
 
-    // 8. Scroll-to-Top Button
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    if (scrollTopBtn) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                scrollTopBtn.style.display = "flex";
-            } else {
-                scrollTopBtn.style.display = "none";
+    function clearError(input, errorId) {
+
+        const errorElement = document.getElementById(errorId);
+
+        input.classList.remove("invalid");
+
+        input.removeAttribute("aria-invalid");
+
+        if (errorElement) {
+            errorElement.textContent = "";
+        }
+
+    }
+
+    function validateField(field) {
+
+        const input = field.input;
+
+        const value = input.value.trim();
+
+        clearError(input, field.errorId);
+
+        if (value === "") {
+
+            showError(
+                input,
+                field.errorId,
+                field.label + " is required."
+            );
+
+            return false;
+
+        }
+
+        if (input === nameInput && value.length < 2) {
+
+            showError(
+                input,
+                field.errorId,
+                "Please enter at least 2 characters."
+            );
+
+            return false;
+
+        }
+
+        if (input === emailInput) {
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(value)) {
+
+                showError(
+                    input,
+                    field.errorId,
+                    "Please enter a valid email address."
+                );
+
+                return false;
+
             }
+
+        }
+
+        if (input === subjectInput && value.length < 3) {
+
+            showError(
+                input,
+                field.errorId,
+                "Subject must contain at least 3 characters."
+            );
+
+            return false;
+
+        }
+
+        if (input === messageInput && value.length < 10) {
+
+            showError(
+                input,
+                field.errorId,
+                "Message must contain at least 10 characters."
+            );
+
+            return false;
+
+        }
+
+        return true;
+
+    }
+
+    fields.forEach(function (field) {
+
+        field.input.addEventListener("input", function () {
+
+            if (field.input.getAttribute("aria-invalid") === "true") {
+
+                validateField(field);
+
+            }
+
+            formStatus.textContent = "";
+
+            formStatus.className = "form-status";
+
         });
 
-        scrollTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+        field.input.addEventListener("blur", function () {
+
+            if (field.input.value.trim() !== "") {
+                validateField(field);
+            }
+
         });
+
+    });
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        let formIsValid = true;
+
+        let firstInvalidInput = null;
+
+        fields.forEach(function (field) {
+
+            const fieldIsValid = validateField(field);
+
+            if (!fieldIsValid) {
+
+                formIsValid = false;
+
+                if (!firstInvalidInput) {
+                    firstInvalidInput = field.input;
+                }
+
+            }
+
+        });
+
+        if (!formIsValid) {
+
+            formStatus.textContent =
+                "Please correct the highlighted fields before continuing.";
+
+            formStatus.className = "form-status error";
+
+            if (firstInvalidInput) {
+                firstInvalidInput.focus();
+            }
+
+            return;
+
+        }
+
+        const fullName = nameInput.value.trim();
+
+        const email = emailInput.value.trim();
+
+        const subject = subjectInput.value.trim();
+
+        const message = messageInput.value.trim();
+
+        const emailBody = [
+            "Hello Deriwan,",
+            "",
+            message,
+            "",
+            "Best regards,",
+            fullName,
+            "Email: " + email
+        ].join("\n");
+
+        const mailtoLink =
+            "mailto:jangvans123@gmail.com" +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(emailBody);
+
+        formStatus.textContent =
+            "Validation successful. Your email application should open with the message prepared. Please press Send in your email application.";
+
+        formStatus.className = "form-status success";
+
+        window.location.href = mailtoLink;
+
+    });
+
+}
+
+
+/* =========================================
+   12. SCROLL TO TOP BUTTON
+   ========================================= */
+
+function initializeScrollToTop() {
+
+    const scrollButton = document.getElementById("scrollTopBtn");
+
+    if (!scrollButton) {
+        return;
     }
-});
+
+    function updateScrollButton() {
+
+        if (window.scrollY > 350) {
+
+            scrollButton.classList.add("show");
+
+        } else {
+
+            scrollButton.classList.remove("show");
+
+        }
+
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateScrollButton,
+        { passive: true }
+    );
+
+    scrollButton.addEventListener("click", function () {
+
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: reducedMotion ? "auto" : "smooth"
+
+        });
+
+    });
+
+    updateScrollButton();
+
+}

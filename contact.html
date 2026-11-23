@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact Deriwan Akhmal for internship opportunities, technical discussions and professional collaboration.">
+
+    <title>Contact | Deriwan Akhmal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                Deriwan<span>.dev</span>
+            </a>
+
+            <button
+                type="button"
+                class="hamburger"
+                id="hamburgerBtn"
+                aria-label="Toggle Navigation"
+                aria-controls="navLinks"
+                aria-expanded="false">
+                <span class="ui-icon" aria-hidden="true">☰</span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li>
+                    <a href="contact.html"
+                       class="active"
+                       aria-current="page">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">Get in Touch</span>
+
+                <h1>Let's Connect &amp; Collaborate</h1>
+
+                <p>
+                    Have a question about my projects,
+                    internship opportunities or technical
+                    collaboration? Feel free to contact me.
+                </p>
+
+            </div>
+
+            <!-- CONTACT CONTENT -->
+            <div class="contact-grid">
+
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info">
+
+                    <article class="card contact-intro-card">
+
+                        <span class="section-tag">
+                            Contact Information
+                        </span>
+
+                        <h2>Let's Start a Conversation</h2>
+
+                        <p>
+                            I am interested in learning opportunities,
+                            industrial automation projects and
+                            professional connections.
+                        </p>
+
+                        <p>
+                            You can reach me through email,
+                            LinkedIn or the contact form.
+                        </p>
+
+                    </article>
+
+                    <article class="contact-detail-card">
+
+                        <span class="contact-icon"
+                              aria-hidden="true">✉</span>
+
+                        <div>
+                            <h3>Email Address</h3>
+
+                            <a href="mailto:jangvans123@gmail.com">
+                                jangvans123@gmail.com
+                            </a>
+                        </div>
+
+                    </article>
+
+                    <article class="contact-detail-card">
+
+                        <span class="contact-icon"
+                              aria-hidden="true">⌖</span>
+
+                        <div>
+                            <h3>Location</h3>
+
+                            <p>
+                                Bandar Puncak Alam,
+                                Selangor, Malaysia
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="contact-detail-card">
+
+                        <span class="contact-icon"
+                              aria-hidden="true">in</span>
+
+                        <div>
+                            <h3>LinkedIn</h3>
+
+                            <a
+                                href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                View My LinkedIn Profile
+                            </a>
+                        </div>
+
+                    </article>
+
+                    <article class="contact-detail-card">
+
+                        <span class="contact-icon"
+                              aria-hidden="true">GH</span>
+
+                        <div>
+                            <h3>GitHub</h3>
+
+                            <a
+                                href="https://github.com/deriwan"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Explore My GitHub
+                            </a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- CONTACT FORM -->
+                <div class="card contact-form-card">
+
+                    <span class="section-tag">
+                        Send a Message
+                    </span>
+
+                    <h2>Write Your Message</h2>
+
+                    <p class="form-description">
+                        Complete the form below. After validation,
+                        your email application will open with
+                        the message prepared.
+                    </p>
+
+                    <form id="contactForm" novalidate>
+
+                        <!-- NAME -->
+                        <div class="form-group">
+
+                            <label for="contactName">
+                                Full Name
+                                <span aria-hidden="true">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contactName"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                maxlength="100"
+                                aria-describedby="nameError"
+                                required>
+
+                            <small
+                                class="error-message"
+                                id="nameError"
+                                aria-live="polite">
+                            </small>
+
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="form-group">
+
+                            <label for="contactEmail">
+                                Email Address
+                                <span aria-hidden="true">*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                name="email"
+                                placeholder="example@email.com"
+                                autocomplete="email"
+                                maxlength="150"
+                                aria-describedby="emailError"
+                                required>
+
+                            <small
+                                class="error-message"
+                                id="emailError"
+                                aria-live="polite">
+                            </small>
+
+                        </div>
+
+                        <!-- SUBJECT -->
+                        <div class="form-group">
+
+                            <label for="contactSubject">
+                                Subject
+                                <span aria-hidden="true">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contactSubject"
+                                name="subject"
+                                placeholder="What is your message about?"
+                                maxlength="150"
+                                aria-describedby="subjectError"
+                                required>
+
+                            <small
+                                class="error-message"
+                                id="subjectError"
+                                aria-live="polite">
+                            </small>
+
+                        </div>
+
+                        <!-- MESSAGE -->
+                        <div class="form-group">
+
+                            <label for="contactMessage">
+                                Your Message
+                                <span aria-hidden="true">*</span>
+                            </label>
+
+                            <textarea
+                                id="contactMessage"
+                                name="message"
+                                rows="6"
+                                placeholder="Write your message here..."
+                                maxlength="2000"
+                                aria-describedby="messageError"
+                                required></textarea>
+
+                            <small
+                                class="error-message"
+                                id="messageError"
+                                aria-live="polite">
+                            </small>
+
+                        </div>
+
+                        <!-- SUBMIT BUTTON -->
+                        <button
+                            type="submit"
+                            class="btn btn-primary submit-btn">
+                            Prepare Email
+                            <span aria-hidden="true">↗</span>
+                        </button>
+
+                        <!-- FORM STATUS -->
+                        <p
+                            id="formStatus"
+                            class="form-status"
+                            role="status"
+                            aria-live="polite">
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT FAQ -->
+        <section class="container about-section">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    Quick Information
+                </span>
+
+                <h2>Frequently Asked Questions</h2>
+
+                <p>
+                    A few details about my technical interests
+                    and professional availability.
+                </p>
+
+            </div>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+
+                    <summary>
+                        What technical fields are you interested in?
+                    </summary>
+
+                    <p>
+                        I am interested in industrial automation,
+                        PLC programming, instrumentation,
+                        embedded systems and Industrial IoT.
+                    </p>
+
+                </details>
+
+                <details class="faq-item">
+
+                    <summary>
+                        Are you open to internship opportunities?
+                    </summary>
+
+                    <p>
+                        Yes. I am interested in suitable
+                        industrial training opportunities
+                        related to electronics and automation.
+                        Please contact me to discuss availability.
+                    </p>
+
+                </details>
+
+                <details class="faq-item">
+
+                    <summary>
+                        Can I learn more about your projects?
+                    </summary>
+
+                    <p>
+                        Yes. Visit the
+                        <a href="projects.html">
+                            Projects page
+                        </a>
+                        to explore my academic work and
+                        technical experience.
+                    </p>
+
+                </details>
+
+                <details class="faq-item">
+
+                    <summary>
+                        How does the contact form work?
+                    </summary>
+
+                    <p>
+                        The form checks the information
+                        you enter and prepares an email
+                        in your email application.
+                        You must send the email manually.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container footer-content">
+
+            <p>
+                &copy; <span id="currentYear"></span>
+                Deriwan Akhmal Bin Mohd Nasir.
+                All rights reserved.
+            </p>
+
+            <div class="social-links">
+
+                <a
+                    href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <span class="ui-icon" aria-hidden="true">in</span>
+                </a>
+
+                <a
+                    href="https://github.com/deriwan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <span class="ui-icon" aria-hidden="true">GH</span>
+                </a>
+
+                <a
+                    href="mailto:jangvans123@gmail.com"
+                    aria-label="Email">
+                    <span class="ui-icon" aria-hidden="true">✉</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button
+        type="button"
+        id="scrollTopBtn"
+        aria-label="Scroll to top">
+        <span class="ui-icon" aria-hidden="true">↑</span>
+    </button>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

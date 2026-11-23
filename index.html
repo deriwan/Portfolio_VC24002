@@ -1,101 +1,215 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Personal portfolio of Deriwan Akhmal, an Industrial Electronic Automation student at UMPSA.">
+
     <title>Home | Deriwan Akhmal - Industrial Electronic Automation</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+    <!-- NAVIGATION -->
     <header>
         <div class="container navbar">
-            <a href="index.html" class="logo">Deriwan<span>.dev</span></a>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Navigation" aria-expanded="false">
-                <i class="fas fa-bars"></i>
+
+            <a href="index.html" class="logo">
+                Deriwan<span>.dev</span>
+            </a>
+
+            <button
+                type="button"
+                class="hamburger"
+                id="hamburgerBtn"
+                aria-label="Toggle Navigation"
+                aria-controls="navLinks"
+                aria-expanded="false">
+                <span class="ui-icon" aria-hidden="true">☰</span>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
+
+            <ul class="nav-links" id="navLinks" aria-label="Main navigation">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+
         </div>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main>
         <section class="container">
+
+            <!-- HERO SECTION -->
             <div class="hero-grid">
+
                 <div class="hero-text">
-                    <p class="greeting-badge" id="timeGreeting">Welcome to My Portfolio</p>
-                    <h1>Deriwan Akhmal Bin Mohd Nasir</h1>
-                    <div class="typing-wrapper">
-                        <span id="typingText"></span><span class="cursor">&nbsp;</span>
-                    </div>
-                    <p>
-                        Final-year Bachelor of Technology in Industrial Electronic Automation student at 
-                        Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA). Passionate about PLC programming, 
-                        HMI development, industrial control systems, and automated manufacturing solutions.
+
+                    <p class="eyebrow">
+                        ELECTRONICS / AUTOMATION / INNOVATION
                     </p>
-                    <div class="hero-actions">
-                        <a href="projects.html" class="btn btn-primary">
-                            <i class="fas fa-folder-open"></i> View My Work
-                        </a>
-                        <a href="docs/resume.pdf" class="btn btn-outline" download>
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
+
+                    <p class="greeting-badge" id="timeGreeting">
+                        Welcome to My Portfolio
+                    </p>
+
+                    <h1>Deriwan Akhmal Bin Mohd Nasir</h1>
+
+                    <div class="typing-wrapper">
+                        <span id="typingText"></span>
+                        <span class="cursor">&nbsp;</span>
                     </div>
+
+                    <p>
+                        Bachelor of Technology in Industrial Electronic
+                        Automation student at Universiti Malaysia Pahang
+                        Al-Sultan Abdullah (UMPSA), with a 3.88 CGPA.
+                        I enjoy developing practical solutions using
+                        PLCs, sensors, microcontrollers and industrial
+                        control systems.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="projects.html" class="btn btn-primary">
+                            <span class="ui-icon" aria-hidden="true">▦</span>
+                            View My Work
+                        </a>
+
+                        <a href="docs/resume.pdf"
+                           class="btn btn-outline"
+                           download>
+                            <span class="ui-icon" aria-hidden="true">↓</span>
+                            Download CV
+                        </a>
+
+                    </div>
+
+                    <div class="availability-note">
+                        Open to industrial training and technical collaboration
+                    </div>
+
                 </div>
 
                 <div class="hero-image-card">
-                    <img src="images/profile.jpg" alt="Portrait photo of Deriwan Akhmal Bin Mohd Nasir">
+                    <img
+                        src="images/profile.jpg"
+                        alt="Portrait photo of Deriwan Akhmal Bin Mohd Nasir"
+                        loading="lazy"
+                        decoding="async">
                 </div>
+
             </div>
 
-            <div class="highlights-grid">
-                <article class="highlight-box">
-                    <span class="highlight-number">3.88</span>
-                    <h3>Current CGPA</h3>
-                    <p>Consistent Dean's List Award recipient at UMPSA</p>
-                </article>
-                <article class="highlight-box">
-                    <span class="highlight-number">3+</span>
-                    <h3>Automation & IoT Projects</h3>
-                    <p>Hands-on PLC, HMI, and Arduino embedded systems</p>
-                </article>
-                <article class="highlight-box">
-                    <span class="highlight-number">SKM L3</span>
-                    <h3>Certified Technician</h3>
-                    <p>Malaysian Skills Certificate & Sime Darby Diesel Cert</p>
-                </article>
-            </div>
+            <!-- HIGHLIGHTS -->
+           
+<div class="highlights-grid">
+
+    <div class="highlight-box">
+        <span class="highlight-number">3.88</span>
+        <h3>Current CGPA</h3>
+        <p>Bachelor of Technology at UMPSA</p>
+    </div>
+
+    <div class="highlight-box">
+        <span class="highlight-number">4</span>
+        <h3>Dean's List Semesters</h3>
+        <p>Academic excellence at UMPSA</p>
+    </div>
+
+    <div class="highlight-box">
+        <span class="highlight-number">Level 3</span>
+        <h3>Malaysian Skills Certificate</h3>
+        <p>Certified in Electronic Technology</p>
+    </div>
+
+</div>
+
+
+            <!-- FEATURED SECTION -->
+            <section class="featured-strip" aria-label="Explore my portfolio">
+
+                <div>
+                    <span class="section-tag">Explore more</span>
+
+                    <h2>
+                        From classroom concepts to hands-on systems.
+                    </h2>
+
+                    <p>
+                        See how I apply electronics, PLC programming
+                        and problem-solving in practical projects.
+                    </p>
+                </div>
+
+                <a href="projects.html" class="btn btn-primary">
+                    Explore Projects
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </section>
+
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container footer-content">
-            <p>&copy; <span id="currentYear"></span> Deriwan Akhmal Bin Mohd Nasir. All rights reserved.</p>
+
+            <p>
+                &copy; <span id="currentYear"></span>
+                Deriwan Akhmal Bin Mohd Nasir.
+                All rights reserved.
+            </p>
+
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+
+                <a
+                    href="https://www.linkedin.com/in/deriwan-akhmal-2b618336a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <span class="ui-icon" aria-hidden="true">in</span>
                 </a>
-                <a href="https://github.com/deriwan" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+
+                <a
+                    href="https://github.com/deriwan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <span class="ui-icon" aria-hidden="true">GH</span>
                 </a>
-                <a href="mailto:vc24002@adab.umpsa.edu.my" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
+
+                <a
+                    href="mailto:jangvans123@gmail.com"
+                    aria-label="Email">
+                    <span class="ui-icon" aria-hidden="true">✉</span>
                 </a>
+
             </div>
+
         </div>
     </footer>
 
-    <button id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <!-- SCROLL TO TOP -->
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+        <span class="ui-icon" aria-hidden="true">↑</span>
+    </button>
+
+    <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
+
 </body>
-</html> 
-<!-- Portfolio website updated -->
+</html>
